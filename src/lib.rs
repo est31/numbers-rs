@@ -6,6 +6,8 @@
 // at your option. Please see the LICENSE file
 // attached to this source distribution for details.
 
+//! Convert i64 to String in various languages
+
 pub extern crate french_numbers as french;
 pub extern crate english_numbers as english;
 pub extern crate chinese_numbers as chinese;
