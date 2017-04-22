@@ -20,7 +20,7 @@ pub enum Language {
 	Chinese,
 }
 
-/// Creates a string representation of the `i64` given
+/// Creates a string representation of the `i64` in the specified language
 pub fn convert(lang :Language, val :i64) -> String {
 	use Language::*;
 	use english::Formatting as EnFormatting;
