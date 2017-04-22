@@ -11,7 +11,7 @@ use Language::*;
 
 #[test]
 fn test_lib() {
-	assert_eq!(convert(English, 42), "fortytwo");
+	assert_eq!(convert(English, 42), "Forty-Two");
 	assert_eq!(convert(French, 42), "quarante-deux");
 	assert_eq!(convert(Chinese, 42), "四十二");
 }

@@ -54,7 +54,7 @@ pub fn convert(lang :Language, val :i64) -> String {
 	use english::Formatting as EnFormatting;
 	match lang {
 		French => french::french_number(&val),
-		English => english::convert(val, EnFormatting::default()),
+		English => english::convert(val, EnFormatting::all()),
 		Chinese => chinese::convert_all_fmt(val),
 	}
 }
