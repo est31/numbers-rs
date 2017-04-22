@@ -1,0 +1,13 @@
+[package]
+name = "numbers"
+version = "0.1.0"
+authors = ["est31 <MTest31@outlook.com>"]
+license = "MIT/Apache-2.0"
+keywords = ["numbers"]
+documentation = "https://docs.rs/numbers"
+description = "Convert i64 to string in various languages"
+
+[dependencies]
+french-numbers = "0.1"
+english-numbers = "0.3"
+chinese-numbers = "1.0"
