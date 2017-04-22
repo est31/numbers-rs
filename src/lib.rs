@@ -12,6 +12,9 @@ pub extern crate french_numbers as french;
 pub extern crate english_numbers as english;
 pub extern crate chinese_numbers as chinese;
 
+#[cfg(test)]
+mod tests;
+
 /// A language to convert into
 #[derive(PartialEq, Eq, Debug, Hash)]
 pub enum Language {
