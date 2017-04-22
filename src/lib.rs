@@ -11,16 +11,41 @@
 pub extern crate french_numbers as french;
 pub extern crate english_numbers as english;
 pub extern crate chinese_numbers as chinese;
+#[cfg(feature = "isolang")]
+pub extern crate isolang;
 
 #[cfg(test)]
 mod tests;
 
 /// A language to convert into
-#[derive(PartialEq, Eq, Debug, Hash)]
+#[derive(PartialEq, Eq, Debug, Hash, Copy, Clone)]
 pub enum Language {
 	French,
 	English,
 	Chinese,
+}
+
+#[cfg(feature = "isolang")]
+impl Language {
+	pub fn from_iso_language(l :isolang::Language) -> Option<Self> {
+		use isolang::Language::*;
+		use Language::*;
+		match l {
+			Fra => Some(French),
+			Eng => Some(English),
+			Zho => Some(Chinese),
+			_ => None,
+		}
+	}
+	pub fn to_iso_language(self) -> isolang::Language {
+		use isolang::Language::*;
+		use Language::*;
+		match self {
+			French => Fra,
+			English => Eng,
+			Chinese => Zho,
+		}
+	}
 }
 
 /// Creates a string representation of the `i64` in the specified language

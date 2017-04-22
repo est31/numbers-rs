@@ -12,3 +12,4 @@ repository = "https://github.com/est31/numbers-rs"
 french-numbers = "0.1"
 english-numbers = "0.3"
 chinese-numbers = "1.0"
+isolang = { version = "0.1", optional = true }

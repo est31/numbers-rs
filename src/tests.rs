@@ -15,3 +15,16 @@ fn test_lib() {
 	assert_eq!(convert(French, 42), "quarante-deux");
 	assert_eq!(convert(Chinese, 42), "四十二");
 }
+
+#[test]
+#[cfg(feature = "isolang")]
+fn test_lang_conversion() {
+	use Language::*;
+	use isolang::Language as IsoLang;
+	let fr = IsoLang::from_639_1("fr").unwrap();
+	assert_eq!(Language::from_iso_language(fr), Some(French));
+	let en = IsoLang::from_639_1("en").unwrap();
+	assert_eq!(Language::from_iso_language(en), Some(English));
+	let zh = IsoLang::from_639_1("zh").unwrap();
+	assert_eq!(Language::from_iso_language(zh), Some(Chinese));
+}
